@@ -6,11 +6,10 @@
 
 import sys
 
-
-isnatural = lambda num: isinstance(num, int) and num > 0
+def isnatural(num): return isinstance(num, int) and num > 0
 
 def solveProblema(n):
-	'''N must be a natural number'''
+	"""N must be a natural number"""
 
 	if not isnatural(n): raise ValueError("El numero tiene que ser natural")
 
