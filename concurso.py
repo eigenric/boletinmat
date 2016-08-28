@@ -25,13 +25,14 @@ def solveProblema(n):
 	return [conjunto for conjunto in conjuntos if len(conjunto) > 1]
 
 def formatConjunto(conjunto):
-	return '{'+str(conjunto[0]) + ', ... ' + str(conjunto[-1]) + '}'
+
+    return '{'+str(conjunto[0]) + ', ..., ' + str(conjunto[-1]) + '}'
 
 
 def consultarNumero():
 
 	try: 
-		numero = int(raw_input("Número a ingresar: "))
+		numero = int(input("Número a ingresar: "))
 	except ValueError:
 		print("Debe ser un numero natural")
 		exit()
@@ -51,6 +52,7 @@ if __name__ == '__main__':
 
 	solucion = solveProblema(numero)
 
-	print "Los siguientes subconjuntos en N de numeros consecutivos suman " + str(numero)
+	print("Los siguientes subconjuntos en N de numeros consecutivos suman " +
+       str(numero))
 	for conjunto in solucion:
-		print formatConjunto(conjunto) + " => " + str(sum(conjunto))
+		print(formatConjunto(conjunto) + " => " + str(sum(conjunto)))
