@@ -1,4 +1,6 @@
-# encoding:utf-8
+# -*- coding: utf-8 -*-
+# author: Ricardo Ruiz
+
 # Programa en Python que halla la solucion del problema
 # Problema: subconjuntos de N, con elementos consecutivos que sumen 91
 
