@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ricardo Ruiz - Concurso 2016</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h5 id="ricardo-ruiz-fernández-de-alba-2º-bachiller-ies-alborán">Ricardo Ruiz Fernández de Alba - 2º Bachiller IES Alborán</h5>
+
+<h4 id="determina-todos-los-conjuntos-de-números-naturales-consecutivos-cuya-suma-vale-91">Determina todos los conjuntos de números naturales consecutivos cuya suma vale 91</h4>
+
+<p>Necesitamos hallar todos los subconjuntos de <script type="math/tex" id="MathJax-Element-2235">\mathbb N</script> de números consecutivos que sumen 91.</p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-3321">
+	\{m, m+1, m+2, ..., n \} \subset \mathbb N \\
+	\sum_{k=m}^nk = 91
+</script> <br>
+Si pensamos que <script type="math/tex; mode=display" id="MathJax-Element-3322">3+4+5= (1+2+3+4+5) - (1+2)</script> podemos expresar este conjunto como una diferencia entre dos <em>segmentos de sucesión natural.</em> <br>
+<script type="math/tex; mode=display" id="MathJax-Element-3323">
+\{m, m+1, m+2, \ldots, n\} = |1, n| \setminus |1, m-1|\\
+</script> <br>
+Así pues, la suma será <br>
+<script type="math/tex; mode=display" id="MathJax-Element-3324">
+\sum_{k=m}^nk = \sum_{k=1}^nk- \sum_{k=1}^{m-1}k = 91
+</script> <br>
+Y considerando la conocida fórmula <br>
+<script type="math/tex; mode=display" id="MathJax-Element-3325">
+\sum_{k=1}^nk=\frac{n(n+1)}{2}
+</script> <br>
+que <a href="#anexo">queda demostrada en el anexo</a>, podemos expresar la suma finalmente como</p>
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-3390">
+\sum_{k=m}^nk = \sum_{k=1}^nk- \sum_{k=1}^{m-1}k = \\
+=\frac{n(n+1)}{2} - \frac{(m-1)(m-1+1)}{2} = \\
+=\frac{n(n+1) - m(m-1)}{2} = 91
+</script> <br>
+Como buscamos los <script type="math/tex" id="MathJax-Element-3391">(n,m)\in\mathbb N</script> que cumplan esta ecuación, se trataría de una <strong>Ecuación “diofántica” (limitada a <script type="math/tex" id="MathJax-Element-3392">\mathbb N</script>)</strong> </p>
+
+<p>Simplificando, <br>
+<script type="math/tex; mode=display" id="MathJax-Element-3393">
+\frac{n(n+1) - m(m-1)}{2} = 91 \\
+n(n+1) - m(m-1) = 182 \\
+n^2+n-m^2+m = 182 \\
+n^2-m^2+n+m = 182 \\
+(n+m)(n-m)+(n+m) = 182 \\
+</script> <br>
+Y finalmente sacando factor común nos queda: <br>
+<script type="math/tex; mode=display" id="MathJax-Element-3394">
+(n+m)(n-m+1) = 182
+</script> <br>
+Si consideramos a <script type="math/tex" id="MathJax-Element-3395">182</script> como producto de dos factores naturales <script type="math/tex" id="MathJax-Element-3396">b</script> y <script type="math/tex" id="MathJax-Element-3397">c</script>, podemos convertir la ecuación en un <strong>Sistema lineal de dos ecuaciones con dos incógnitas.</strong> <br>
+<script type="math/tex; mode=display" id="MathJax-Element-3398">
+(n+m)(n-m+1) = 182 = bc \\
+\left\{ 
+\begin{array}{c}
+n + m= b \\ 
+n-m +1 = c
+\end{array}
+\right. 
+</script></p>
+
+<p>Resolviendo el sistema por reducción, se obtiene: <br>
+<script type="math/tex; mode=display" id="MathJax-Element-3399">
+   n = \frac{b+c-1}{2}, m = \frac{b-c+1}{2}
+</script> <br>
+Además, se tiene que cumplir que <script type="math/tex" id="MathJax-Element-3400">n \gt 0</script>, <script type="math/tex" id="MathJax-Element-3401">m \gt 0</script> y que <script type="math/tex" id="MathJax-Element-3402">n \gt m</script> <br>
+<script type="math/tex; mode=display" id="MathJax-Element-3403">
+n = \frac{b+c-1}{2} \gt 0; b \gt 1-c \\
+m = \frac{b-c+1}{2} \gt 0; b \gt c -1 \\
+\frac{b+c-1}{2} \gt \frac{b-c+1}{2} \\
+2c \gt 2; c \gt 1; c - 1 \gt 0
+</script> <br>
+De tal manera que la condición resumen es <br>
+<script type="math/tex; mode=display" id="MathJax-Element-3404">
+b \gt c -1 \gt 0
+</script></p>
+
+<p>Siendo <script type="math/tex" id="MathJax-Element-3405">182 = 2\cdot7\cdot13</script>,  las parejas de factores que cumplen esta condición son:</p>
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-1156">
+\begin{align}
+(I) \quad b= 2\cdot7 = 14, c = 13 \\
+(II) \quad b = 2\cdot13 = 26, c = 7 \\
+(III) \quad b = 7\cdot13 = 91, c= 2
+\end{align}
+</script></p>
+
+<p>Y los correspondientes <script type="math/tex" id="MathJax-Element-1157">n</script> y <script type="math/tex" id="MathJax-Element-1158">m</script> serían: <br>
+<script type="math/tex" id="MathJax-Element-1159">(I)</script> <br>
+<script type="math/tex; mode=display" id="MathJax-Element-1160">
+\begin{align}
+n=\frac{14+13-1}{2}=13\\
+m = \frac{14-13+1}{2} = 1\\
+\end{align}
+</script> <br>
+<script type="math/tex" id="MathJax-Element-1161">(II)</script> <br>
+<script type="math/tex; mode=display" id="MathJax-Element-1162">
+\begin{align}
+n = \frac{26+7-1}{2} = 16\\
+m = \frac{26-7+1}{2} = 10
+\end{align}
+</script> <br>
+<script type="math/tex" id="MathJax-Element-1163">(III)</script> <br>
+<script type="math/tex; mode=display" id="MathJax-Element-1164">\begin{align}
+n = \frac{91+2-1}{2} = 46\\
+m = \frac{91-2+1}{2} = 45
+\end{align}</script></p>
+
+<p>Como conclusión, los subconjuntos de números consecutivos en <script type="math/tex" id="MathJax-Element-1165">\mathbb N</script> que suman <script type="math/tex" id="MathJax-Element-1166">91</script> son:</p>
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-1167">
+\{1,2,3, \ldots, 13\}\\
+\{10, 11, 12, \ldots, 16\}\\
+\{45, 46\}
+</script></p>
+
+
+
+<h4 id="anexo">Anexo: Demostración de la fórmula</h4>
+
+<p>Se va a demostrar por inducción la siguiente proposición.</p>
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-3493">
+P(n) = \sum_{k=1}^nk = \frac{n(n+1)}{2} 
+</script> <br>
+1) <script type="math/tex" id="MathJax-Element-3494">P(1)</script> es cierta <br>
+<script type="math/tex; mode=display" id="MathJax-Element-3495">
+     1 = \frac{1(1+1)}{2}
+</script> <br>
+2) Suponiendo <script type="math/tex" id="MathJax-Element-3496">P(n)</script> cierta, demostramos <script type="math/tex" id="MathJax-Element-3497">P(n+1)</script> <br>
+<script type="math/tex; mode=display" id="MathJax-Element-3498">
+	\sum_{k=1}^{n+1}k = \frac{(n+1)(n+2)}{2}\\	
+	=\frac{(n+1)(n+2)}{2} =\frac{n^2+2n+n+2}{2} = \\
+	 =\frac{n^2+n}{2} + \frac{2n+2}{2}= \frac{n(n+1)}{2} + n+1 = \\
+	 \text{Y, por hipótesis de inducción,} \\
+	 = \left(\sum_{k=1}^nk\right)+(n+1) =
+	  \sum_{k=1}^{n+1}k
+</script></p></div></body>
+</html>
