@@ -1,0 +1,150 @@
+\documentclass[12pt]{article}
+\title{\textbf{Soluci\'on Concurso de Problemas - IX n\'um. 3}}
+\author{Ricardo Ruiz Fern\'andez de Alba}
+\date{06/09/2016}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,activeacute]{babel}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+
+\begin{document}
+
+\maketitle
+
+\section{Determina todos los conjuntos de n'umeros naturales consecutivos cuya suma vale 91}
+
+Necesitamos hallar todos los subconjuntos de $\mathbb{N}$ de n'umeros consecutivos que sumen 91.
+
+\begin{align*}
+	\{m, m+1, m+2, ..., n \} \subset \mathbb{N} \\
+	\sum_{k=m}^nk = 91
+\end{align*}
+
+Si pensamos que, $$3+4+5= (1+2+3+4+5) - (1+2)$$ generalizando, podemos expresar este conjunto como una diferencia entre dos \emph{segmentos de sucesi'on natural.}
+\begin{align*}
+\{m, m+1, m+2, \ldots, n\} = |1, n| \setminus |1, m-1|\\
+\end{align*}
+As'i pues, la suma ser'a
+$$
+\sum_{k=m}^nk = \sum_{k=1}^nk- \sum_{k=1}^{m-1}k = 91
+$$
+Y considerando la conocida f'ormula
+$$
+\sum_{k=1}^nk=\frac{n(n+1)}{2}
+$$
+que queda demostrada en el anexo, podemos expresar la suma finalmente como
+
+$$
+\sum_{k=m}^nk = \sum_{k=1}^nk- \sum_{k=1}^{m-1}k =\frac{n(n+1)}{2} - \frac{(m-1)(m-1+1)}{2} =\frac{n(n+1) - m(m-1)}{2} = 91
+$$
+Como buscamos los $(n,m)\in\mathbb{N}$ que cumplan esta ecuaci'on, se tratar'ia de una \emph{Ecuaci'on "diof'antica" (limitada a $\mathbb{N}$)}
+
+Simplificando,
+
+\begin{align*}
+\frac{n(n+1) - m(m-1)}{2} = 91 \\
+n(n+1) - m(m-1) = 182 \\
+n^2+n-m^2+m = 182 \\
+n^2-m^2+n+m = 182 \\
+(n+m)(n-m)+(n+m) = 182 \\
+\end{align*}
+
+Y finalmente, sacando factor com'un, nos queda:
+$$
+(n+m)(n-m+1) = 182
+$$
+Si consideramos a $182$ como producto de dos factores naturales $b$ y $c$, podemos convertir la ecuaci'on en un \emph{Sistema lineal de dos ecuaciones con dos inc'ognitas.}
+\begin{align*}
+(n+m)(n-m+1) = 182 = bc \\
+\left\{ 
+\begin{array}{c}
+n + m= b \\ 
+n-m +1 = c
+\end{array}
+\right. 
+\end{align*}
+ 
+Resolviendo el sistema por reducci'on, se obtiene:
+$$
+   n = \frac{b+c-1}{2}, m = \frac{b-c+1}{2}
+$$
+Adem'as, se tiene que cumplir que $n > 0$, $m > 0$ y que $n > m$
+
+\begin{align*}
+n = \frac{b+c-1}{2} > 0; b > 1-c \\
+m = \frac{b-c+1}{2} > 0; b > c -1 \\
+\frac{b+c-1}{2} > \frac{b-c+1}{2} \\
+2c > 2; c > 1; c - 1 > 0
+\end{align*}
+
+De tal manera que la condici'on resumen es
+$$
+b > c -1 > 0
+$$
+
+Siendo $182 = 2\cdot7\cdot13$,  las 'unicas parejas de factores que cumplen esta condici'on son:
+
+\begin{align*}
+(I)  \quad b= 2\cdot7 = 14, c = 13 \\
+(II) \quad b = 2\cdot13 = 26, c = 7 \\
+(III)\quad b = 7\cdot13 = 91, c= 2
+\end{align*}
+
+
+Y los correspondientes $n$ y $m$ ser'ian:
+
+
+$(I)$
+
+\begin{align*}
+n=\frac{14+13-1}{2}=13\\
+m = \frac{14-13+1}{2} = 1\\
+\end{align*}
+
+
+$(II)$
+
+\begin{align*}
+n = \frac{26+7-1}{2} = 16\\
+m = \frac{26-7+1}{2} = 10
+\end{align*}
+
+
+$(III)$
+\begin{align*}
+n = \frac{91+2-1}{2} = 46\\
+m = \frac{91-2+1}{2} = 45
+\end{align*}
+
+Por tanto, los subconjuntos de n'umeros consecutivos en $\mathbb{N}$ que suman $91$ son:
+
+\begin{align*}
+\{1,2,3,4,5,6,7,8,9,10,11,12,13\}\\
+\{10, 11, 12, 13, 14, 15,16\}\\
+\{45, 46\}
+\end{align*}
+
+\section{Anexo: Demostraci'on de la f'ormula}
+Se va a demostrar por inducci'on la siguiente proposici'on.
+
+$$
+P(n) = \sum_{k=1}^nk = \frac{n(n+1)}{2} 
+$$
+1) $P(1)$ es cierta
+$$
+     1 = \frac{1(1+1)}{2}
+$$
+2) Suponiendo $P(n)$ cierta, demostramos $P(n+1)$
+
+\begin{align*}
+	\sum_{k=1}^{n+1}k = \frac{(n+1)(n+2)}{2} = \\
+	=\frac{n^2+2n+n+2}{2} = \frac{n^2+n}{2} + \frac{2n+2}{2} \\
+	= \frac{n(n+1)}{2} + n+1 = \\
+	 \text{Y, por hip'otesis de inducci'on,} \\
+	 = \left(\sum_{k=1}^nk\right)+(n+1) =
+	  \sum_{k=1}^{n+1}k
+\end{align*}
+
+
+\end{document}
