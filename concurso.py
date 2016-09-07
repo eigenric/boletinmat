@@ -5,6 +5,7 @@
 # Problema: subconjuntos de N, con elementos consecutivos que sumen 91
 
 import sys
+import itertools
 
 def isnatural(num): return isinstance(num, int) and num > 0
 
@@ -12,17 +13,14 @@ def solveProblema(n):
 	"""N must be a natural number"""
 
 	if not isnatural(n): raise ValueError("El numero tiene que ser natural")
-
-	posibles = []
-	conjuntos = []
-
-	for primero in range(1, n+1):
-		for siguiente in range(primero, n+1):
-			posibles.append(siguiente)
-			if sum(posibles) == n:
-				conjuntos.append(posibles[:])
-		posibles = []
-	return [conjunto for conjunto in conjuntos if len(conjunto) > 1]
+	
+	suplimit = int(n/2) + 1
+	for primero in range(1, suplimit):
+		for segundo in range(primero, suplimit):
+			suma = sum(range(primero, segundo+1))
+			if suma < n: continue
+			elif suma == n: yield (primero, segundo)
+			break
 
 def formatConjunto(conjunto):
 
@@ -51,8 +49,6 @@ if __name__ == '__main__':
 		numero = consultarNumero()
 
 	solucion = solveProblema(numero)
-
-	print("Los siguientes subconjuntos en N de numeros consecutivos suman " +
-       str(numero))
+	print("Los siguientes subconjuntos en N de numeros consecutivos suman {}".format(numero)) 
 	for conjunto in solucion:
-		print(formatConjunto(conjunto) + " => " + str(sum(conjunto)))
+		print("{} => {}".format(formatConjunto(conjunto),numero))
