@@ -12,19 +12,20 @@ def isnatural(num):
     return isinstance(num, int) and num > 0
 
 
-def solve(n):
+def solve(total):
     """N must be a natural number"""
 
-    if not isnatural(n):
+    if not isnatural(total):
         raise ValueError("El numero tiene que ser natural")
-    suplimit = n//2 + 2
-    for primero in range(1, suplimit):
-        for segundo in range(primero, suplimit):
-            suma = sum(range(primero, segundo+1))
-            if suma < n:
+
+    suplimit = total//2 + 2
+    for m in range(1, suplimit):
+        for n in range(m, suplimit):
+            suma = (n-m+1)*(m+n) // 2
+            if suma < total:
                 continue
-            elif suma == n:
-                yield (primero, segundo)
+            elif suma == total:
+                yield (m, n)
             break
 
 
@@ -55,8 +56,8 @@ if __name__ == '__main__':
 
     solucion = solve(numero)
 
-    print("Los siguientes subconjuntos en N de numeros",
-          f"consecutivos suman {numero}")
+    print("Los siguientes subconjuntos en N de numeros consecutivos suman {}"
+          .format(numero))
 
     for conjunto in solucion:
         print("{} => {}".format(formatConjunto(conjunto), numero))
