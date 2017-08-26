@@ -7,8 +7,8 @@ Este repositorio contiene:
 
 * Un pequeño [programa] en Python que resuelve el problema.
 * El archivo *LaTeX* de la [Solución](solucion.tex)
-* Compilado en [Pdf](solucion.pdf) y en [Formato web](web/solucion.html)
-        ![Solucion.pdf](preview.png)
+* Compilado en [Pdf](solucion.pdf)
+        [![Solucion.pdf](preview.png)](solucion.pdf)
 
 ## Funcionamiento del programa
 
