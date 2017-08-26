@@ -1,0 +1,11 @@
+# Changelog
+
+## 0.3:
+    - Abandonada funcion sum(). Se aplica fórmula
+    - Time: 100000: 1.19s
+## 0.2
+    - Optimización añadida
+    - Time: 100000: 4.8 s
+## 0.1:
+    - Obtención de los subconjuntos para cualquier n
+    - Time: 999: 5s
