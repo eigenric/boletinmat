@@ -12,12 +12,12 @@ def isnatural(num):
     return isinstance(num, int) and num > 0
 
 
-def solveProblema(n):
+def solve(n):
     """N must be a natural number"""
 
     if not isnatural(n):
         raise ValueError("El numero tiene que ser natural")
-    suplimit = int(n/2) + 1
+    suplimit = n//2 + 2
     for primero in range(1, suplimit):
         for segundo in range(primero, suplimit):
             suma = sum(range(primero, segundo+1))
@@ -53,7 +53,7 @@ if __name__ == '__main__':
     except:
             numero = consultarNumero()
 
-    solucion = solveProblema(numero)
+    solucion = solve(numero)
 
     print("Los siguientes subconjuntos en N de numeros",
           f"consecutivos suman {numero}")

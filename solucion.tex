@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
-\title{\textbf{Soluci\'on Concurso de Problemas - IX n\'um. 3}}
-\author{Ricardo Ruiz Fern\'andez de Alba}
-\date{06/09/2016}
+\title{\textbf{Soluci\'on Problema - Vol. IX-3}}
+\author{Ricardo Ruiz Fern\'andez de Alba 2 Bach - IES Albor\'an}
+\date{24/09/2016}
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
 \usepackage[spanish,activeacute]{babel}
@@ -12,16 +12,20 @@
 
 \maketitle
 
-\section{Determina todos los conjuntos de n'umeros naturales consecutivos cuya suma vale 91}
+\section*{Determina todos los conjuntos de n'umeros naturales consecutivos cuya suma vale 91}
 
-Necesitamos hallar todos los subconjuntos de $\mathbb{N}$ de n'umeros consecutivos que sumen 91.
+Necesitamos hallar todos los subconjuntos de $\mathbb{N}$ de n'umeros consecutivos que sumen 91, es decir, que tengan la forma:
 
 \begin{align*}
 	\{m, m+1, m+2, ..., n \} \subset \mathbb{N} \\
+\end{align*}
+
+Y la suma de todos sus elementos ser'a:
+\begin{align*}
 	\sum_{k=m}^nk = 91
 \end{align*}
 
-Si pensamos que, $$3+4+5= (1+2+3+4+5) - (1+2)$$ generalizando, podemos expresar este conjunto como una diferencia entre dos \emph{segmentos de sucesi'on natural.}
+Si pensamos que, $$3+4+5= (1+2+3+4+5) - (1+2)$$ y generalizamos, podemos expresar este conjunto como la diferencia entre dos \emph{segmentos de sucesi'on natural.}
 \begin{align*}
 \{m, m+1, m+2, \ldots, n\} = |1, n| \setminus |1, m-1|\\
 \end{align*}
@@ -29,7 +33,7 @@ As'i pues, la suma ser'a
 $$
 \sum_{k=m}^nk = \sum_{k=1}^nk- \sum_{k=1}^{m-1}k = 91
 $$
-Y considerando la conocida f'ormula
+Y, considerando la conocida f'ormula
 $$
 \sum_{k=1}^nk=\frac{n(n+1)}{2}
 $$
@@ -38,7 +42,8 @@ que queda demostrada en el anexo, podemos expresar la suma finalmente como
 $$
 \sum_{k=m}^nk = \sum_{k=1}^nk- \sum_{k=1}^{m-1}k =\frac{n(n+1)}{2} - \frac{(m-1)(m-1+1)}{2} =\frac{n(n+1) - m(m-1)}{2} = 91
 $$
-Como buscamos los $(n,m)\in\mathbb{N}$ que cumplan esta ecuaci'on, se tratar'ia de una \emph{Ecuaci'on "diof'antica" (limitada a $\mathbb{N}$)}
+
+Como buscamos los $(n,m)\in\mathbb{N}$ que cumplan esta ecuaci'on, se tratar'ia de una \emph{Ecuaci'on "diof'antica" (limitada a $\mathbb{N}$ en lugar de $\mathbb{Z}$})
 
 Simplificando,
 
@@ -125,7 +130,7 @@ Por tanto, los subconjuntos de n'umeros consecutivos en $\mathbb{N}$ que suman $
 \{45, 46\}
 \end{align*}
 
-\section{Anexo: Demostraci'on de la f'ormula}
+\section*{Anexo: Demostraci'on de la f'ormula utilizada}
 Se va a demostrar por inducci'on la siguiente proposici'on.
 
 $$
