@@ -5,7 +5,7 @@ Solución ganadora del problema publicado en el Vol. 9-3 del [Boletín Matemáti
 
 Este repositorio contiene:
 
-* Un pequeño [programa] en Python que resuelve el problema.
+* Un pequeño [programa](concurso.py) en Python que resuelve el problema.
 * El archivo *LaTeX* de la [Solución](solucion.tex)
 * Compilado en [Pdf](solucion.pdf)
         [![Solucion.pdf](preview.png)](solucion.pdf)
