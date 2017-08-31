@@ -22,3 +22,9 @@ Los siguientes subconjuntos en N de numeros consecutivos suman 91
 {45, ..., 46} => 91
 
 ```
+## Licencia
+
+Los archivos [solucion.tex](solucion.tex) y [solucion.pdf](solucion.pdf) están
+licenciados bajo [Creative Commons Attribution
+4.0](http://creativecommons.org/licenses/by/4.0/) y [el script](concurso.py)
+bajo la licencia MIT (Ver [LICENSE](LICENSE)).
